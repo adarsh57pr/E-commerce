@@ -1,9 +1,13 @@
-import React from 'react'
-import { useLocation } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import CartContext from '../context/CartContext';
 
 const ViewDetails = () => {
+  let ctx = useContext(CartContext);
+  // console.log(ctx)
+
   const location = useLocation();
-  console.log(location)
+  // console.log(location)
   let view = location.state;
 
   let star = '';
@@ -27,7 +31,7 @@ const ViewDetails = () => {
 
           </div>
         </div>
-        <div className='col-md-6 text-lg-start px-5' >
+        <div className='col-md-6 text-lg-start text-dark px-5' >
           <p className="card-text"><b>Stock : </b>{view.stock}</p>
           <p className="card-text"><b>Return Policy : </b>{view.returnPolicy}</p>
           <p className="card-text"><b>Shiping Information : </b>{view.shippingInformation}</p>
@@ -41,12 +45,12 @@ const ViewDetails = () => {
         <div className='d-flex justify-content-between mt-2'>
           <div className='col-md-6t ext-lg-start px-5 mt-4' >
 
-            <button className='btn bg-warning ms-5'>Add to Cart</button>
-            <button className='btn bg-success ms-2 px-4'>Buy Now</button>
+            <button onClick={() => ctx.addToCart(view)} className='btn bg-warning ms-5'>Add to Cart</button>
+            <Link to="/pay" className='btn bg-success ms-2 px-4'>Buy Now</Link>
 
           </div>
           <div className='col-md-6  text-lg-start px-5'>
-            <p className="card-text"><b>Reviews : </b>{view.reviews.map((ele) => {
+            <p className="card-text text-dark"><b>Reviews : </b>{view.reviews.map((ele) => {
               let star2 = '';
               let temp2 = Math.round(ele.rating)
               for (let i = 1; i <= temp2; i++) {

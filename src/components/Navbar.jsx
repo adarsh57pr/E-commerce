@@ -8,10 +8,10 @@ import UserContext from '../context/UserContext'
 
 const Navbar = () => {
   const ctx = useContext(CartContext);
-  console.log(ctx)
+  // console.log(ctx)
 
   const userStore = useContext(UserContext)
-  console.log(userStore)
+  // console.log(userStore)
   let login = userStore.userData.login
 
   const [searchValue, setsearchValue] = useState('');

@@ -10,11 +10,11 @@ import UserContext from '../context/UserContext';
 const Home = () => {
 
   const ctx = useContext(CartContext);
-  console.log(ctx)
+  // console.log(ctx)
 
   let searchCtx = useContext(UserContext)
   let searchValue = searchCtx.search
-  console.log(searchValue)
+  // console.log(searchValue)
 
   const [products, setproducts] = useState([]);
 
@@ -24,15 +24,15 @@ const Home = () => {
   let firstIndex = lastIndex - itemperPage;
 
   let filteredProducts = products.filter((ele) => ele.title.toLowerCase().includes(searchValue) || ele.category.toLowerCase().includes(searchValue));
-  console.log(filteredProducts)
+  // console.log(filteredProducts)
 
   let slicedArr = filteredProducts.slice(firstIndex, lastIndex);
-  console.log(slicedArr.length);
+  // console.log(slicedArr.length);
 
-  let NoOfButtons = Math.ceil(filteredProducts  .length / itemperPage);
-  console.log(NoOfButtons);
+  let NoOfButtons = Math.ceil(filteredProducts.length / itemperPage);
+  // console.log(NoOfButtons);
   let btnArr = new Array(NoOfButtons).fill(0);
-  console.log(btnArr);
+  // console.log(btnArr);
 
   const handlePrev = () => {
     if (currentPage > 1) {
@@ -53,11 +53,11 @@ const Home = () => {
     setloding(true)
     try {
       let res = await axios.get('https://dummyjson.com/products/?limit=0&skip=0')
-      console.log(res.data.products);
+      // console.log(res.data.products);
       setproducts(res.data.products)
       setloding(false)
     } catch (error) {
-      console.log(error)
+      // console.log(error)
       seterror(true)
     }
   }
@@ -109,7 +109,7 @@ const Home = () => {
           <nav aria-label="Page navigation example">
             <ul className="pagination justify-content-center flex-wrap">
               <li onClick={handlePrev} className="page-item disabled">
-                <a className="page-link">Previous</a>
+                <Link to='#' className="page-link">Previous</Link>
               </li>
               {
                 btnArr.map((item, key) => {

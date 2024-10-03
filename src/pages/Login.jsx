@@ -20,7 +20,7 @@ const Login = () => {
       email:emailref.current.value,
       password:passwordref.current.value,
     }
-    console.log(obj)
+    // console.log(obj)
 
   
     if(!obj.email){
