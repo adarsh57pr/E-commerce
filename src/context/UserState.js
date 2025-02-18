@@ -8,7 +8,8 @@ const UserState = (props) => {
 
     const [userData, setuserData] = useState({
         login:details ? details.login : false,
-        email: details ?  details.email : ''
+        email: details ?  details.email : '',
+        mode:false
     });
     console.log(userData)
   return (

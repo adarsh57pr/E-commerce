@@ -25,5 +25,24 @@ body{
     color: #3b71ca !important;
   }
 
+  .card:after{
+    
+    content:"";
+    position:absolute;
+    /* left:2px;
+    bottom:0px; */
+    width:5px;
+    height:100%;
+    background-color:white;
+    transform:scaleY(0);
+    transition:all 0.5s;
+    transform-origin:right;
+}
+
+.card:hover::after{
+    transform:scaleY(0.8);
+}
+
+
  
  

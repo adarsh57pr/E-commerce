@@ -49,8 +49,8 @@ const Login = () => {
     }
   }
   return (
-    <div className='signupForm' style={{marginTop:'70px'}}>
-      <form className='col-6 m-auto mt-5'>
+    <div className='signupForm ' style={{marginTop:'70px'}}>
+      <form className='col-6 m-auto mt-5 bg-dark p-5 mb-4 rounded' style={{backgroundImage:"url('https://st2.depositphotos.com/1760420/5432/i/450/depositphotos_54324565-stock-photo-online-shopping-and-e-commerce.jpg')" }}>
         <h3 className='text-center my-2'>Login Form</h3>
  
   <div className="mb-3">

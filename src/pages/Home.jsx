@@ -14,6 +14,8 @@ const Home = () => {
 
   let searchCtx = useContext(UserContext)
   let searchValue = searchCtx.search
+  let mode = searchCtx.userData.mode
+  console.log(mode)
   // console.log(searchValue)
 
   const [products, setproducts] = useState([]);
@@ -65,10 +67,8 @@ const Home = () => {
     getAllData()
   }, [])
 
-
-
   return (
-    <div>
+    <div style={{backgroundColor:mode===true? 'white' : 'black'}}>
       {loding ? (
         <div className="row m-0 p-0 p-3 justify-content-center gap-3">
           {Array(6).fill(0).map(() => {
@@ -83,13 +83,13 @@ const Home = () => {
             </SkeletonTheme>
           })}
         </div>
-      ) : (<div className='' style={{ marginTop: '70px' }}>
+      ) : (<div className='' style={{ marginTop: '40px' }}>
         {error === false ? <div className='row m-0 p-0 justify-content-center pt-3 px-4  gap-3'>
 
           {slicedArr.map((ele) => {
-            return ele.thumbnail && <div className="card bg-info" style={{ width: '18rem' }}>
+            return ele.thumbnail && <div className="card  bg-info" style={{ width: '18rem' }}>
               <img src={ele.thumbnail} className="card-img-top mt-2" alt="..." />
-              <div className="card-body d-flex row justify-content-between rounded bg-info-subtle " style={{}}>
+              <div className="card-body  d-flex row justify-content-between rounded bg-info-subtle " style={{}}>
                 <h5 className="card-title">{ele.title}</h5>
                 <p className="card-text">Price :{ele.price} $ </p>
                 <p className="card-text">Brand :{ele.brand}</p>
@@ -105,7 +105,7 @@ const Home = () => {
           })}
 
         </div> : <PNF />}
-        <div className='mt-4 '>
+        <div className='mt-6 pb-4 '>
           <nav aria-label="Page navigation example">
             <ul className="pagination justify-content-center flex-wrap">
               <li onClick={handlePrev} className="page-item disabled">

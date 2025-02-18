@@ -16,7 +16,7 @@ import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import UserContext from './context/UserContext'
 import Pay from './pages/Pay'
-import Footer from './pages/Footer'
+import Footer from './components/Footer'
 
 const App = () => {
 

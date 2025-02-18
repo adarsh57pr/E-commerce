@@ -42,8 +42,8 @@ const Signup = () => {
     }
   }
   return (
-    <div className='signupForm' style={{height:"100vh", marginTop: '70px', backgroundImage:"url('https://st2.depositphotos.com/1760420/5432/i/450/depositphotos_54324565-stock-photo-online-shopping-and-e-commerce.jpg')",backgroundRepeat:"no-repeat",backgroundSize:"cover" }}>
-   <form onSubmit={handleSubmit} className='col-6 m-auto mt-5'>
+    <div className='signupForm p-4 mt-4' style={{height:"100vh"}}>
+   <form onSubmit={handleSubmit} className='col-6 m-auto px-5 py-3 mt-5 rounded' style={{backgroundImage:"url('https://i.pinimg.com/474x/0e/07/80/0e0780cec5095b930a6e5043d683ec03.jpg')",backgroundRepeat: "no-repeat" , backgroundSize: "cover"}}>
    <h3 className='text-center my-2'>Signup Form</h3>
   <div className="mb-3">
     <label htmlFor="exampleInputEmail1" className="form-label">Name</label>
