@@ -1,7 +1,8 @@
 
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import './App.css'
-
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/js/bootstrap.bundle.min';
 import Navbar from './components/Navbar'
 import Cart from './pages/Cart'
 import Login from './pages/Login'

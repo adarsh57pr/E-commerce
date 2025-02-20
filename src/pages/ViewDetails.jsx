@@ -25,7 +25,8 @@ const ViewDetails = () => {
     <div style={{backgroundColor:mode===true ? 'white' : 'black'}}>
     <div className='container' style={{ marginTop: '40px' }}>
       <div className='row fw-medium pt-6 ps-4'>
-        <div className='col-md-6 bg-info d-flex rounded'><img src={location.state.thumbnail} alt="" />
+        <div className='col-md-6 bg-info d-flex justify-evenly rounded '>
+          <div className='col-md-6'><img src={location.state.thumbnail} alt="" /></div>
           <div className=' col-md-6 bg-white text-dark d-flex flex-column justify-content-center rounded my-4 py-2' style={{ textAlign: 'center' }}>
             <h4 className="card-title">{view.title}</h4>
             <p className="card-text"><b>Price : </b>{view.price} $ </p>
@@ -33,7 +34,6 @@ const ViewDetails = () => {
             <p className="card-text"><b>Brand : </b>{view.brand}</p>
             <p className="card-text"><b>Category : </b>{view.category}</p>
             <p className="card-text"><b>Rating : </b>{star}</p>
-
           </div>
         </div>
         <div className='col-md-6 text-lg-start px-5' style={{color:mode===true ? 'black' : 'white'}} >
@@ -61,9 +61,9 @@ const ViewDetails = () => {
               for (let i = 1; i <= temp2; i++) {
                 star2 += '⭐'
               }
-              return <div className='d-flex mt-2 bg-info rounded text-black mt-0' style={{ marginLeft: '100px' }}>
-                <img className='bg-info-subtle rounded  mt-2 ms-2' style={{ height: '70px', width: '70px' }} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSLU5_eUUGBfxfxRd4IquPiEwLbt4E_6RYMw&s" alt="" />
-                <div className='ms-4 mt-2' style={{ lineHeight: '5px' }}>
+              return <div className='d-flex mt-2 bg-info rounded text-black' style={{ marginLeft: '100px' }}>
+                <img className='bg-info-subtle rounded p-1  mt-2 ms-2' style={{ height: '70px', width: '70px' }} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSLU5_eUUGBfxfxRd4IquPiEwLbt4E_6RYMw&s" alt="" />
+                <div className='ms-2 mt-2' style={{ lineHeight: '5px' }}>
                   <h4 className='text-light'>{ele.reviewerName}</h4>
                   <p>{ele.reviewerEmail}</p>
                   <p><b>Rating : </b>{star2}</p>

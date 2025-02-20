@@ -87,9 +87,9 @@ const Home = () => {
         {error === false ? <div className='row m-0 p-0 justify-content-center pt-3 px-4  gap-3'>
 
           {slicedArr.map((ele) => {
-            return ele.thumbnail && <div className="card  bg-info" style={{ width: '18rem' }}>
-              <img src={ele.thumbnail} className="card-img-top mt-2" alt="..." />
-              <div className="card-body  d-flex row justify-content-between rounded bg-info-subtle " style={{}}>
+            return ele.thumbnail && <div className="card bg-info" style={{ width: '18rem',height:'' }}>
+              <img src={ele.thumbnail} className="card-img-top" alt="..." />
+              <div className="card-body d-flex row justify-content-between rounded bg-info-subtle  " style={{}}>
                 <h5 className="card-title">{ele.title}</h5>
                 <p className="card-text">Price :{ele.price} $ </p>
                 <p className="card-text">Brand :{ele.brand}</p>
